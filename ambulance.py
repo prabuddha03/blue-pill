@@ -13,6 +13,9 @@ from geopy import distance
 
 
 class travel():
+    
     def __init__(self,root):
         self.root=root
         self.root.title("Ambulance Booking System")
+        self.root.geometry(geometry)
+                        
