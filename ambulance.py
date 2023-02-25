@@ -8,6 +8,7 @@ import time
 import datetime
 import requests
 import json
+from PIL import ImageTk, Image  
 from geopy.geocoders import Nominatim
 from geopy import distance
 
@@ -25,15 +26,10 @@ class travel():
         Receipt_Ref=StringVar()
         TotalCost=StringVar()
         
-        var1=IntVar()
-        var2=IntVar()
-        var3=IntVar()
-        var4=IntVar()
-        journeyType=IntVar()
+        btn=IntVar()
         
-        varl1=StringVar()
-        varl2=StringVar()
-        varl3=StringVar()
+        pickup_loc=StringVar()
+        drop_loc=StringVar()
         reset_counter=0
         
         Firstname=StringVar()
@@ -65,14 +61,10 @@ class travel():
             self.txtReceipt1.delete("1.0",END)
             self.txtReceipt2.delete("1.0",END)
             
-            var1.set(0)
-            var2.set(0)
-            var3.set(0)
-            var4.set(0)
-            journeyType.set(0)
-            varl1.set("")
-            varl2.set("")
-            varl3.set("0")
+
+            btn.set(0)
+            pickup_loc.set("")
+            drop_loc.set("")
             
             self.txtKm.configure(state=DISABLED)
             self.reset_counter=1
@@ -103,9 +95,9 @@ class travel():
                 self.txtReceipt1.insert(END,'Mobile:\n')
                 self.txtReceipt2.insert(END, Mobile.get() + "\n")
                 self.txtReceipt1.insert(END,'From:\n')
-                self.txtReceipt2.insert(END, varl1.get() + "\n")
+                self.txtReceipt2.insert(END, pickup_loc.get() + "\n")
                 self.txtReceipt1.insert(END,'To:\n')
-                self.txtReceipt2.insert(END, varl2.get() + "\n")
+                self.txtReceipt2.insert(END, drop_loc.get() + "\n")
                 self.txtReceipt1.insert(END,"Distance:\n")
                 self.txtReceipt2.insert(END, str(Km.get()) + " KM \n")
                 self.txtReceipt1.insert(END,'Total Cost:\n')
@@ -119,8 +111,8 @@ class travel():
         
         def Kilo():
             geocoder=Nominatim(user_agent="Blue-Pill")
-            location1=varl1.get()
-            location2=varl2.get()
+            location1=pickup_loc.get()
+            location2=drop_loc.get()
 
             coordinates1=geocoder.geocode(location1)
             coordinates2=geocoder.geocode(location2)
@@ -165,7 +157,7 @@ class travel():
         TravelFrame = LabelFrame(FrameDetails,bd=10, width=300,height=250, font=('arial',12,'bold'),text="Booking Detail", relief=RIDGE)
         TravelFrame.grid(row=0,column=1)
         
-        Book_Frame=LabelFrame(FrameDetails,width=300,height=150,relief=FLAT)
+        Book_Frame=LabelFrame(FrameDetails,width=400,height=400,relief=FLAT)
         Book_Frame.grid(row=1,column=0)
 
         CostFrame = LabelFrame(FrameDetails,width=150,height=150,bd=5,relief=FLAT)
@@ -174,7 +166,7 @@ class travel():
         Receipt_BottonFrame=LabelFrame(CustomerDetailsFrame,bd=10, width=450,height=400, relief=RIDGE)
         Receipt_BottonFrame.pack(side=RIGHT,fill=BOTH,expand=True)
 
-        ReceiptFrame=LabelFrame(Receipt_BottonFrame, width=350,height=300, font=('arial',12,'bold'),text="Receipt", relief=RIDGE)
+        ReceiptFrame=LabelFrame(Receipt_BottonFrame, width=550,height=300, font=('arial',12,'bold'),text="Receipt", relief=RIDGE)
         ReceiptFrame.grid(row=0,column=0)
 
         ButtonFrame=LabelFrame(Receipt_BottonFrame, width=450,height=200, relief=RIDGE)
@@ -182,52 +174,52 @@ class travel():
         
         #Patient Info
         self.Firstname=tkb.Label(CustomerName,bootstyle='primary',font=('arial',14,'bold'),text="Firstname")
-        self.Firstname.grid(row=0,column=0,sticky=W)
+        self.Firstname.grid(row=0,column=0,sticky=W, padx=20,pady=20)
         self.txtFirstname=tkb.Entry(CustomerName,bootstyle='primary',font=('arial',14,'bold'),textvariable=Firstname,justify=LEFT)
         self.txtFirstname.grid(row=0,column=1)
         
         self.Surname=tkb.Label(CustomerName,bootstyle='primary',font=('arial',14,'bold'),text="Surname")
-        self.Surname.grid(row=1,column=0,sticky=W)
+        self.Surname.grid(row=1,column=0,sticky=W, padx=20,pady=20)
         self.txtSurname=tkb.Entry(CustomerName,bootstyle='primary',font=('arial',14,'bold'),textvariable=Surname,justify=LEFT)
         self.txtSurname.grid(row=1,column=1,sticky=W)
         
         self.Address=tkb.Label(CustomerName,bootstyle='primary',font=('arial',14,'bold'),text="Address")
-        self.Address.grid(row=2,column=0,sticky=W)
-        self.txtAddress=tkb.Entry(CustomerName,bootstyle='primary',font=('arial',14,'bold'),textvariable=Address,justify=LEFT)
+        self.Address.grid(row=2,column=0,sticky=W, padx=20,pady=20)
+        self.txtAddress=tkb.Entry(CustomerName,bootstyle='primary',font=('arial',11,'bold'),width=27,textvariable=Address,justify=LEFT)
         self.txtAddress.grid(row=2,column=1)
         
         self.Pincode=tkb.Label(CustomerName,bootstyle='primary',font=('arial',14,'bold'),text="Pincode")
-        self.Pincode.grid(row=3,column=0,sticky=W)
+        self.Pincode.grid(row=3,column=0,sticky=W, padx=20,pady=20)
         self.txtPincode=tkb.Entry(CustomerName,bootstyle='primary',font=('arial',14,'bold'),textvariable=Pincode,justify=LEFT)
         self.txtPincode.grid(row=3,column=1)
         
         self.Mobile=tkb.Label(CustomerName,bootstyle='primary',font=('arial',14,'bold'),text="Mobile")
-        self.Mobile.grid(row=5,column=0,sticky=W)
+        self.Mobile.grid(row=5,column=0,sticky=W, padx=20,pady=20)
         self.txtMobile=tkb.Entry(CustomerName,bootstyle='primary',font=('arial',14,'bold'),textvariable=Mobile,justify=LEFT)
         self.txtMobile.grid(row=5,column=1)
         
         
         #Booking Info
         self.Pickup=tkb.Label(TravelFrame,bootstyle='primary',font=('arial',14,'bold'),text="Pickup")
-        self.Pickup.grid(row=0,column=0,sticky=W)
-        self.ambPickup=tkb.Entry(TravelFrame,bootstyle='primary',font=('arial',14,'bold'),textvariable=varl1,justify=LEFT)
+        self.Pickup.grid(row=0,column=0,sticky=W, padx=20,pady=20)
+        self.ambPickup=tkb.Entry(TravelFrame,bootstyle='primary',font=('arial',14,'bold'),textvariable=pickup_loc,justify=LEFT)
         self.ambPickup.grid(row=0,column=1)
         
         self.Drop=tkb.Label(TravelFrame,bootstyle='primary',font=('arial',14,'bold'),text="Drop")
-        self.Drop.grid(row=1,column=0,sticky=W)
-        self.ambDrop=tkb.Entry(TravelFrame,bootstyle='primary',font=('arial',14,'bold'),textvariable=varl2,justify=LEFT)
+        self.Drop.grid(row=1,column=0,sticky=W, padx=20,pady=20)
+        self.ambDrop=tkb.Entry(TravelFrame,bootstyle='primary',font=('arial',14,'bold'),textvariable=drop_loc,justify=LEFT)
         self.ambDrop.grid(row=1,column=1)
         
         
         #Distance between pickup point and hospital
-        self.chkKm=tkb.Checkbutton(TravelFrame,bootstyle='primary-round-toggle',text="Distance(KMs) *",variable = var2, onvalue=1, offvalue=0,command=Kilo).grid(row=4, column=0, sticky=W)
+        self.chkKm=tkb.Checkbutton(TravelFrame,bootstyle='primary-round-toggle',text="Distance(KMs) *",variable = btn, onvalue=1, offvalue=0,command=Kilo).grid(row=4, column=0, sticky=W)
         self.txtKm=tkb.Label(TravelFrame,bootstyle='primary',font=('arial',14,'bold'),textvariable=Km,width=18,state= DISABLED,justify=RIGHT,relief=SUNKEN)
-        self.txtKm.grid(row=4,column=1)
+        self.txtKm.grid(row=4,column=1, padx=20,pady=20)
         
         
         
         #Costings
-        self.TotalCost=tkb.Label(CostFrame,bootstyle='primary',font=('arial',14,'bold'),text="Total Cost")
+        self.TotalCost=tkb.Label(CostFrame,bootstyle='primary',font=('arial',14,'bold'),text="Total Cost: ")
         self.TotalCost.grid(row=2,column=2,sticky=W)
         self.txtTotalCost=Label(CostFrame,font=('arial',14,'bold'),textvariable=TotalCost,bd=7, width=10, justify=RIGHT,bg="white",relief=SUNKEN)
         self.txtTotalCost.grid(row=2,column=3)
@@ -244,6 +236,14 @@ class travel():
         self.btnReset = tkb.Button(ButtonFrame,bootstyle='primary-outline',width = 7,text='Reset',command=Reset).grid(row=0,column=2)
         self.btnExit = tkb.Button(ButtonFrame,bootstyle='primary-outline',width = 7,text='Exit', command=iExit).grid(row=0,column=3)
         
+        #blue-pill logo on the side
+        image1 = Image.open("logo.png")
+        image1 = image1.resize((320, 320))
+        logo = ImageTk.PhotoImage(image1)
+        label1 = Label(image=logo)
+        label1.image=logo
+        label1.place(x=50,y=450)
+                              
         
 if __name__=='__main__':
     
