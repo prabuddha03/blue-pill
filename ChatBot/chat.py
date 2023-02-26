@@ -45,4 +45,4 @@ def get_response(msg):
             if tag == intent["tag"]:
                 return random.choice(intent['responses'])
     else:
-        return "I do not understand. I am still learning, so my database is currently limited to only mental health......."
+        return "I do not understand. I am still learning, so my database is currently limited to only mental health....."
