@@ -1,0 +1,11 @@
+tkinter
+pandas
+flask
+geopy
+scikit-learn
+pytorch
+django
+ttkbootstrap
+Pillow
+nltk
+numpy
