@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.cdnfonts.com/css/lateef');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+@font-face {
+	font-family: 'HarryPotter';
+	src: url('../../CSS/HARRYP__.TTF');
+}
+body {
+  background-color: #221866;
+  overflow-y: auto;
+}
+
+
+.head {
+  padding-top: 10vh;
+}
+
+.tag_1{
+    position: absolute;
+left: -290px;
+right: 48.56%;
+top: 200px;
+bottom: 47.47%;
+
+font-family: 'IBM Plex Sans Thai';
+font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 59px;
+text-align: center;
+
+color: #000000;
+}
+
+.tag_2{
+    margin-left: -760px;
+    margin-top: 140px;
+
+font-family: 'IBM Plex Sans Thai';
+font-style: normal;
+font-weight: 500;
+font-size: 64px;
+line-height: 106px;
+text-align: center;
+
+color: #000000;
+}
+.text_1
+{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    
+}
+
+.team-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .home_illustration{
+    position: absolute;
+    size: 50%;
+  }
+}
+
+.card-section {
+
+  padding: 80px 30px;
+}
+
+.member-card {
+
+
+  height: 383px;
+  width: 412px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.15);
+  border-radius: 48px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 58px;
+  top: 683px;
+}
+
+.team-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-content h3{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.member-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.member-links a {
+  padding: 10px;
+}
+
+
+.mem-img img{
+  height: 100px;
+  width: 100px;
+  margin-top: -110px;
+}
+
+.home_illustration{
+    position: absolute;
+width: 652px;
+height: 430px;
+left: 779px;
+top: 149px;
+
+}
+
+.describe{
+    position: absolute;
+width: 450px;
+height: 155px;
+left: 58px;
+top: 371px;
+
+font-family: 'Lateef';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 35px;
+text-align: justify;
+
+color: #000000;
+margin-bottom: 300px;
+}
+
+.cards{
+    margin-top: 250px;
+}
+
+.member-card:hover{
+    color: #fff;
+  background-color: #29c6ff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+
+}
