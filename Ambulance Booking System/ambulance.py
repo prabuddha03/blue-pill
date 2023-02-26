@@ -129,7 +129,7 @@ class travel():
         
         def Total_Paid():
                 Item2=Km.get()
-                Cost_of_fare = (float(Item2)*50)
+                Cost_of_fare = (float(Item2)*12)
                 TT = "Rs " + str('%.2f'%(Cost_of_fare))
 
                 TotalCost.set(TT)
@@ -237,7 +237,7 @@ class travel():
         self.btnExit = tkb.Button(ButtonFrame,bootstyle='primary-outline',width = 7,text='Exit', command=iExit).grid(row=0,column=3)
         
         #blue-pill logo on the side
-        image1 = Image.open("logo.png")
+        image1 = Image.open("AmBulance Booking System/logo.png")
         image1 = image1.resize((320, 320))
         logo = ImageTk.PhotoImage(image1)
         label1 = Label(image=logo)
