@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.cdnfonts.com/css/lateef');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 @font-face {
 	font-family: 'HarryPotter';
@@ -32,11 +35,8 @@ color: #000000;
 }
 
 .tag_2{
-    position: absolute;
-left: -620px;
-right: 10.63%;
-top: 27.27%;
-bottom: -7.07%;
+    margin-left: -760px;
+    margin-top: 140px;
 
 font-family: 'IBM Plex Sans Thai';
 font-style: normal;
@@ -47,11 +47,15 @@ text-align: center;
 
 color: #000000;
 }
-.text
+.text_1
 {
-  font-family: 'HarryPotter', sans-serif;
-  color:#000000;
-  font-size: 30px; 
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    
 }
 
 .team-section {
@@ -63,6 +67,10 @@ color: #000000;
   .team-section {
     flex-direction: column;
     align-items: center;
+  }
+  .home_illustration{
+    position: absolute;
+    size: 50%;
   }
 }
 
@@ -110,14 +118,11 @@ color: #000000;
   padding: 10px;
 }
 
-.mem-img{
-  border-radius: 50%;
-}
 
 .mem-img img{
-  border-radius: 50%;
-  height: 160px;
-  width: 160px;
+  height: 100px;
+  width: 100px;
+  margin-top: -110px;
 }
 
 .home_illustration{
@@ -131,7 +136,7 @@ top: 149px;
 
 .describe{
     position: absolute;
-width: 631px;
+width: 450px;
 height: 155px;
 left: 58px;
 top: 371px;
@@ -148,5 +153,13 @@ margin-bottom: 300px;
 }
 
 .cards{
-    margin-top: 500px;
+    margin-top: 250px;
+}
+
+.member-card:hover{
+    color: #fff;
+  background-color: #29c6ff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+
 }
