@@ -28,3 +28,15 @@ Initially there were features planned like crowdfunding , medical loans, medicin
 but we would obviously like to work further in this project to  add a valid database , to make things work smoothly , while adding up certain features. 
 .
 We oath to make this an all in all healthcare solution in future.
+
+
+The demo video of the prototype is : https://drive.google.com/file/d/18QYbUGIJ9oX3Vcl3daxLcdPh2d1vlyk4/view?usp=sharing
+
+.
+
+Figma prototype link : https://www.figma.com/proto/TPfmeoByP2Kcjp17DIL9Bo/Untitled?page-id=0%3A1&node-id=53%3A1273&viewport=253%2C1791%2C0.42&scaling=min-zoom&starting-point-node-id=53%3A1273
+
+Ambulance booking exe file link : https://drive.google.com/drive/folders/1-TrM6CgIyhqP5PYs3hOZT7rmfCk993XC?usp=sharing
+
+This is the link for the ambulance booking app , we were unable to add it natively. 
+this is made using python with tikinter library.
