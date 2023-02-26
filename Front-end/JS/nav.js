@@ -12,7 +12,7 @@ let navColor = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
 	if (window.scrollY > 40) {
-		navColor.style.backgroundColor = '#432fc3';
+		navColor.style.backgroundColor = 'transparent';
 	} else {
 		navColor.style.backgroundColor = 'transparent';
 	}
