@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-emergency{
+    position: absolute;
+    left: 17.72%;
+    right: 20.76%;
+    top: 23.15%;
+    bottom: 50%;
+
+    font-family: 'IBM Plex Sans Thai';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 33px;
+    text-align: center;
+    text-decoration: none;
+
+    color: #000000;
+
+}
+
+.nav-link{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+padding-right: 30px;
+/* identical to box height */
+
+
+color: #000000;
+
+}
+
+.navbar {
+    top:0;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1rem 5rem;
+    z-index: 100;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.47) 64.58%, rgba(217, 217, 217, 0) 100%);
+
+}
+
+.hamburger {
+    display: none;
+    
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+
+
+.nav-menu {
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-item {
+    margin-left: 1rem;
+}
+
+.nav-link{
+    font-size: 1rem;
+    font-weight: 200;
+    color: #ececec;
+    display: inline-block;
+    padding: 1rem 1rem;   
+    padding-right: 30px;
+    
+}
+
+.nav-link:hover{
+    color: #71C5E3;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    padding: 5px;
+
+
+}
+
+.nav-logo {
+    font-size: 2.0rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 1040px) {
+    .navbar{
+        padding: 0.5rem 2rem;
+    }
+    .logo
+{
+    margin-left: -40px;
+}
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 4rem;
+        padding-top:10px;
+        
+        flex-direction: column;
+        background-color: linear-gradient(180deg, rgba(217, 217, 217, 0.47) 64.58%, rgba(217, 217, 217, 0) 100%);;;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+
+    }
+
+    .nav-menu.active {
+        left: 0;
+        top:70px;
+
+    }
+
+    .nav-item {
+        margin: 0.6rem 0;
+        padding-right: 30px;
+        
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .incementor
+    {
+        height: 20vh;
+    }
+}
